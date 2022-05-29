@@ -1,0 +1,11 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+@import "./components/header";
+@import "./components/sidebar";
+@import "./components/hero";
+@import "./components/ourSpecialties";
+@import "./components/modal";
+@import "./components/tabs";

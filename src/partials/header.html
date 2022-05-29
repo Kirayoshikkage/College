@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="container d-flex header__container">
+    <button
+      type="button"
+      class="btn-reset sidebar-trigger header__sidebar-trigger"
+    >
+      <span class="sidebar-trigger__item"></span>
+      <span class="sidebar-trigger__item"></span>
+      <span class="sidebar-trigger__item"></span>
+      <span class="sidebar-trigger__item"></span>
+      <span class="sidebar-trigger__item"></span>
+    </button>
+    <form action="#" class="header__search search">
+      <button type="submit" class="btn-reset search__button">
+        <svg class="search__icon">
+          <use xlink:href="img/sprite.svg#search"></use>
+        </svg>
+      </button>
+      <label class="search__label">
+        <input
+          type="text"
+          name="search"
+          placeholder="Поиск"
+          class="input-reset search__input"
+        />
+      </label>
+    </form>
+    <button type="submit" class="btn-reset header__login login mobile-hidden">
+      <svg class="login__icon">
+        <use xlink:href="img/sprite.svg#login"></use>
+      </svg>
+    </button>
+    <button type="submit" class="btn-reset visually-impaired mobile-hidden">
+      <svg class="visually-impaired__icon">
+        <use xlink:href="img/sprite.svg#glasses"></use>
+      </svg>
+    </button>
+  </div>
+</header>

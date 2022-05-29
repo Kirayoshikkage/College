@@ -1,0 +1,59 @@
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.5);
+  opacity: 0;
+  transition-property: opacity, visibility;
+  transition-duration: 0.6s;
+  z-index: -1;
+  visibility: hidden;
+
+  &_open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+
+    .modal__body {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  &__body {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.6s;
+    margin: 0 rem(30);
+    background-color: white;
+    border-radius: rem(4);
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__close {
+    background: none;
+    outline: none;
+    border: none;
+    top: rem(-35);
+    right: rem(-35);
+    cursor: pointer;
+  }
+
+  &__icon {
+    stroke: white;
+    stroke-width: 2;
+    width: rem(25);
+    height: rem(25);
+  }
+}

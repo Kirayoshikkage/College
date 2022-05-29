@@ -1,0 +1,375 @@
+.our-specialties {
+  position: relative;
+  height: 100%;
+  padding: rem(20) 0;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .speciality {
+    max-height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+    padding-right: rem(45);
+  }
+
+  &__title {
+    margin: 0 0 rem(40);
+    text-align: center;
+  }
+
+  .swiper-wrapper {
+    .swiper-slide:nth-child(even) {
+      .speciality {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: rem(15);
+    height: rem(15);
+    opacity: 1;
+    background-color: #0e1734;
+    transition-property: transform, background;
+    transition-duration: 0.6s;
+  }
+
+  .swiper-pagination-bullet-active {
+    transform: scale(0.67);
+    background-color: #fab047;
+  }
+
+  &__modal {
+    .modal__body {
+      width: 100%;
+      position: relative;
+    }
+
+    .modal__content {
+      display: grid;
+      grid-template-areas:
+        "img tabs"
+        "img contacts";
+      grid-template-rows: 1fr auto;
+      grid-template-columns: 30% 1fr;
+      row-gap: 1rem;
+      width: 100%;
+      min-height: 50vh;
+      max-height: 80vh;
+      overflow: auto;
+    }
+
+    .modal__close {
+      position: absolute;
+    }
+
+    .modal__item:nth-child(1) {
+      grid-area: img;
+    }
+
+    .modal__item:nth-child(2) {
+      grid-area: tabs;
+    }
+
+    .modal__item:nth-child(3) {
+      grid-area: contacts;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .modal__contacts {
+      display: flex;
+
+      .contacts__icon {
+        fill: var(--color-lightBlack);
+      }
+
+      .contacts__link {
+        color: var(--color-lightBlack);
+      }
+
+      .contacts__item {
+        padding: 1rem;
+      }
+    }
+
+    .modal__button {
+      border-radius: 0 0 rem(4) 0;
+      background-color: var(--color-lightBlack);
+    }
+  }
+
+  &__tabs {
+    .tabs__triggers {
+      flex-wrap: wrap;
+    }
+    .tabs__trigger {
+      flex: 1 1 auto;
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--color-lightBlack);
+      color: white;
+      transition-property: background, color;
+      transition-duration: 0.4s;
+
+      &_active {
+        background-color: white;
+        color: var(--color-lightBlack);
+      }
+    }
+  }
+}
+
+.title {
+  font-size: rem(36);
+  line-height: lh(54, 36);
+  letter-spacing: -0.01em;
+  color: var(--color-darkBlue);
+}
+
+.speciality {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  &__item {
+    &:first-child {
+      margin-right: rem(30);
+      padding: rem(10) 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__subtitle {
+    font-size: rem(36);
+    font-weight: 500;
+    line-height: lh(54, 36);
+    letter-spacing: -0.01em;
+    margin: 0 0 rem(24);
+    color: var(--color-darkBlue);
+  }
+
+  &__desc {
+    max-width: rem(584);
+    margin: 0 0 rem(24);
+    font-size: rem(18);
+    line-height: lh(27, 18);
+    color: #848fac;
+    max-height: rem(100);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: rem(18);
+    line-height: rem(27, 18);
+    color: #424f7b;
+  }
+
+  &__span {
+    margin: 0 rem(10) 0 0;
+  }
+
+  &__icon {
+    width: rem(20);
+    height: rem(20);
+    fill: #424f7b;
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .our-specialties {
+    padding: 0 0 rem(20);
+
+    &__modal {
+      .modal__content {
+        grid-template-areas:
+          "tabs"
+          "contacts";
+        grid-template-columns: 1fr;
+      }
+
+      .modal__item:nth-child(1) {
+        display: none;
+      }
+    }
+  }
+  .speciality {
+    &__item {
+      &:first-child {
+        align-self: center;
+      }
+    }
+
+    &__subtitle {
+      font-size: rem(30);
+    }
+
+    &__desc {
+      font-size: rem(16);
+      max-height: rem(86);
+    }
+
+    &__link {
+      font-size: rem(16);
+    }
+  }
+  .title {
+    font-size: rem(30);
+    margin: 0 0 rem(20);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .our-specialties {
+    padding: 0 0 rem(15);
+
+    &__slider {
+      padding: rem(55) 0 0;
+    }
+
+    .swiper-wrapper {
+      .swiper-slide:nth-child(even) {
+        .speciality {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+
+    .speciality {
+      min-height: 100%;
+      &__item {
+        &:last-child {
+          overflow: hidden;
+        }
+      }
+    }
+
+    .our-specialties__pagination {
+      top: 0;
+      height: rem(15);
+    }
+
+    &__modal {
+      overflow: auto;
+      .modal__body {
+        margin: 0;
+      }
+
+      .modal__item:nth-child(3) {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .modal__close {
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
+
+    .modal__contacts {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__tabs {
+      .tabs__triggers {
+        flex-direction: column;
+      }
+      .tabs__trigger {
+        padding: 0.75rem;
+      }
+    }
+  }
+
+  .speciality {
+    flex-direction: column-reverse;
+    gap: 0;
+
+    &__item {
+      &:first-child {
+        margin-right: 0;
+        padding: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__subtitle {
+      font-size: rem(24);
+      margin: 0 0 rem(12);
+    }
+
+    &__img {
+      height: auto;
+    }
+
+    &__desc {
+      font-size: rem(14);
+      max-height: rem(78);
+    }
+  }
+}
+
+@media (max-width: 26.5rem) {
+  .speciality {
+    text-align: center;
+    align-items: center;
+
+    &__link {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 47.99rem) and (max-height: 26.5rem) {
+  .our-specialties {
+    .speciality {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      &__item {
+        &:last-child {
+          display: none;
+        }
+      }
+
+      &__link {
+        justify-content: center;
+      }
+
+      &__desc {
+        max-height: rem(55);
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
